@@ -1,10 +1,10 @@
-browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
 server-->browser: HTML-code (200 OK)
 browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
 server-->browser: main.css (200 OK)
-browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
-server-->browser: main.js (200 OK)
-browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/data.json
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser: spa.js (200 OK)
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
 server-->browser: data.json (200 OK)
 
 note over browser:
@@ -12,8 +12,8 @@ The user enters the new note and
 creates it by clicking on the "Save" button 
 end note
 
-browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/new_note
-server-->browser: new_note (302 Found)
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: new_note_spa (201 Created)
 
 note over browser:
 browser starts executing js-code
